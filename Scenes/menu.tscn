@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqtil4sj0nuj6"]
+
+[ext_resource type="Texture2D" uid="uid://dfxanexlq5vqj" path="res://Sprites/Forest.jpg" id="1_gq644"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ruvis"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_ruvis")
+
+[node name="Forest" type="Sprite2D" parent="."]
+position = Vector2(512, 288)
+texture = ExtResource("1_gq644")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -161.0
+offset_right = 126.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Espectro Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -40.0
+offset_right = 103.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Play"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
